@@ -1,0 +1,17 @@
+# Environments
+.env
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# SQLite temp files
+data/*.db-journal
+data/*.db-shm
+data/*.db-wal
+
+# IDE files
+.idea/
+.vscode/
+.DS_Store
