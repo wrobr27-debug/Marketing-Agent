@@ -29,14 +29,15 @@ def generate_outreach_proposal(lead: dict) -> str:
     )
     
     system_prompt = (
-        "You are 'Bilaspur Web Solutions', a helpful, expert local web developer from Bilaspur, Chhattisgarh. "
+        "You are 'Developer Bilaspur', a helpful, expert local web developer from Bilaspur, Chhattisgarh. "
         "You write warm, respectful, and consultative sales outreach messages to local shopkeepers, merchants, schools, and clinic owners in Bilaspur. "
         "Your goal is to offer custom, high-speed, mobile-responsive web development services. "
         "Rules:\n"
         "1. Be extremely personalized. Mention the business name, location, and specific audit issues (e.g. no website, or slow site, or bad mobile layout).\n"
         "2. Keep the message short (under 120 words / 800 characters) so it fits in a WhatsApp or Instagram DM.\n"
         "3. Write in a friendly, conversational Hinglish (Hindi-English code-mixed) style, which reads natural and local to merchants in Chhattisgarh.\n"
-        "4. DO NOT use generic placeholders like [Your Name] or [My Name]. Sign off directly as 'Bilaspur Web Solutions Team' or 'Bilaspur Web Developers'."
+        "4. Provide our website 'Developerbilaspur.in' and Instagram handle '@developerbilaspur' as references so they can check our work.\n"
+        "5. DO NOT use generic placeholders like [Your Name] or [My Name]. Sign off directly as 'Developer Bilaspur' (website: Developerbilaspur.in, Instagram: @developerbilaspur)."
     )
     
     try:
@@ -66,19 +67,21 @@ def get_fallback_pitch(lead: dict) -> str:
             f"Namaste {name} Team! \n\n"
             f"Humne dekha ki aapki business {_extract_area(address)} me local logon ke beech kaafi popular hai. "
             f"Kya aapne kabhi business ke liye custom website banane ka socha hai? Ek custom mobile-friendly website se "
-            f"Bilaspur ke aur bhi customers aapko Google par aasani se dhoondh sakenge aur order/appointment book kar sakenge. "
+            f"Bilaspur ke aur bhi customers aapko Google par aasani se dhoondh sakenge. "
+            f"Aap humare designs aur profile humari website 'Developerbilaspur.in' ya Instagram handle '@developerbilaspur' par check kar sakte hain. "
             f"Hum local developers hain aur aapke liye responsive website setup kar sakte hain. "
             f"Agar aap interested hain to please batayein!\n\n"
-            f"Regards,\nBilaspur Web Solutions"
+            f"Regards,\nDeveloper Bilaspur (Developerbilaspur.in / Insta: @developerbilaspur)"
         )
     else:
         return (
             f"Namaste {name} Team! \n\n"
             f"Humne aapki website ({lead.get('website_url')}) check ki. Aapka business {_extract_area(address)} me accha kar raha hai, "
-            f"lekin aapki website mobile par slow load ho rahi hai aur responsive layout missing hai. Isse customers exit kar jaate hain. "
+            f"lekin aapki website mobile par slow load ho rahi hai aur responsive layout missing hai. "
             f"Hum aapke website ko optimize, fast, aur modern mobile-friendly design me update kar sakte hain. "
+            f"Aap humare previous projects humari website 'Developerbilaspur.in' ya Instagram handle '@developerbilaspur' par check kar sakte hain. "
             f"Kya hum ispar discuss kar sakte hain?\n\n"
-            f"Regards,\nBilaspur Web Solutions"
+            f"Regards,\nDeveloper Bilaspur (Developerbilaspur.in / Insta: @developerbilaspur)"
         )
 
 def _extract_area(address: str) -> str:
