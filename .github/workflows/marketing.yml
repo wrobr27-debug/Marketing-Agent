@@ -43,7 +43,7 @@ jobs:
         run: |
           # Create data directory if it doesn't exist
           mkdir -p data
-          python src/main.py
+          PYTHONPATH=. python src/main.py
 
       - name: Commit and Push database changes
         run: |
